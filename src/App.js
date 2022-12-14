@@ -1,10 +1,24 @@
 import "./App.css";
 import Login from "./pages/login";
+import Validation from "./pages/validation";
+import Enter from "./pages/enter";
+import Traffic from "./pages/traffic";
+import Requests from "./pages/requests";
+import Profile from "./pages/profile";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <Login></Login>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Login />} />
+        <Route path="validation" element={<Validation />} />
+        <Route path="Enter" element={<Enter />} />
+        <Route path="Traffic" element={<Traffic />} />
+        <Route path="Requests" element={<Requests />} />
+        <Route path="Profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
