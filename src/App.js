@@ -6,6 +6,7 @@ import Traffic from "./pages/traffic";
 import Requests from "./pages/requests";
 import Profile from "./pages/profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   return (

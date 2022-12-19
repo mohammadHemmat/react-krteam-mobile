@@ -22,7 +22,7 @@ function Validation() {
       redirect: "follow",
     };
 
-    fetch("https://karteam.kheyrati.space/auth/verify", requestOptions)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/verify`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         let result_json = JSON.parse(result);

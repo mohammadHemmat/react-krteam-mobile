@@ -103,7 +103,9 @@ background: #d8dbe0;
   text-align: center;
   padding-top: .6rem;
 }
-
+.map-container {
+  height: 200px;
+  }
 .enter__btn--changes {
 margin-top: .5rem;
 background: #000;

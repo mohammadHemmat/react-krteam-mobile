@@ -20,7 +20,7 @@ function Login() {
       redirect: "follow",
     };
 
-    fetch("https://karteam.kheyrati.space/auth/signIn", requestOptions)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/signIn`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result);

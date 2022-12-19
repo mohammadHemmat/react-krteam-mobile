@@ -6,7 +6,9 @@ function Enter() {
   const [companies, SetCompanies] = useState([]);
   function onClick(e, company_id) {
     console.log(company_id);
-    localStorage.setItem("company", company_id);
+    console.log(companies.filter(p=>p.company._id==company_id));
+
+    localStorage.setItem("company",JSON.stringify(companies.filter(p=>p.company._id==company_id)[0].company));
     navigate(`/Traffic`);
   }
   useEffect(() => {
@@ -18,11 +20,12 @@ function Enter() {
       headers: myHeaders,
       redirect: "follow",
     };
-    fetch("https://karteam.kheyrati.space/companyUser/", requestOptions)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/companyUser/`, requestOptions)
       .then((response) => response.text())
       .then((result) => SetCompanies(JSON.parse(result)))
       .catch((error) => console.log("error", error));
   });
+ 
   return (
     <div>
       <div className="enter--container">
