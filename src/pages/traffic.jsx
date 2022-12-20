@@ -11,6 +11,7 @@ function Traffic() {
   const [lng, setLng] = useState(60);
   const [lat, setLat] = useState(35);
   const [zoom, setZoom] = useState(13);
+  const [x, setx] = useState('');
   const navigate = useNavigate();
   const [company, SetCompany] = useState('');
   function onClick(e, company_id) {
@@ -37,7 +38,7 @@ function Traffic() {
   }, []);
   useEffect(() => {
     if (map.current) return; // initialize map only once
-    
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
@@ -46,37 +47,49 @@ function Traffic() {
     });
     map.current.addControl(new mapboxgl.NavigationControl(), "top-right");
     if (navigator.geolocation) {
-      navigator.permissions
-        .query({ name: "geolocation" })
-        .then(function (result) {
-          if (result.state === "granted") {
-            console.log(result.state);
-            //If granted then you can directly call your function here
-          } else if (result.state === "prompt") {
-            console.log(result.state);
-          } else if (result.state === "denied") {
-            //If denied then you have to show instructions to enable location
-          }
-          result.onchange = function () {
-            console.log(result.state);
-          };
-        });
+      // navigator.permissions
+      //   .query({ name: "geolocation" })
+      //   .then(function (result) {
+      //     if (result.state === "granted") {
+      //       console.log(result.state);
+      //       // navigator.geolocation.watchPosition(function (position) {
+      //       //   map.current.flyTo({
+      //       //     center: [position.coords.longitude, position.coords.latitude]
+      //       //   });
+      //       //   new mapboxgl.Marker().setLngLat([position.coords.longitude, position.coords.latitude]).addTo(map.current)
+
+      //       // });
+      //       //If granted then you can directly call your function here
+      //     } else if (result.state === "prompt") {
+      //       console.log(result.state);
+      //     } else if (result.state === "denied") {
+      //       console.log(result.state);
+      //     }
+
+      //   });
+      function success(position) {
+       console.log(position);
+       setx(JSON.stringify(position)) 
+      }
+      function error() {
+        setx("errr")
+        console.log('Unable to retrieve your location');
+      }
+      navigator.geolocation.getCurrentPosition(success, error);
       navigator.geolocation.watchPosition(function (position) {
+        setx(JSON.stringify(position)) 
         map.current.flyTo({
           center: [position.coords.longitude, position.coords.latitude]
         });
         new mapboxgl.Marker().setLngLat([position.coords.longitude, position.coords.latitude]).addTo(map.current)
-        
       });
     }
-
-
   });
   return (
     <div className="background-container">
       <div className="traffic-main">
         <div className="traffic-container">
-          <p className="trafic__text--header">شرکت {company.name}</p>
+          <p className="trafic__text--header">شرکت {company.name} {x}</p>
           <svg className="traffic__bell--icon">
             <use href="../images/icon/sprite.svg#bell-solid"></use>
           </svg>
