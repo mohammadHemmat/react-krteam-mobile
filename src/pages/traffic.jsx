@@ -10,6 +10,7 @@ function Traffic() {
   const map = useRef(null);
   const [lng, setLng] = useState(60);
   const [lat, setLat] = useState(35);
+  const [userMarker, setuserMarker] = useState();
   const [zoom, setZoom] = useState(13);
   const [x, setx] = useState('');
   const navigate = useNavigate();
@@ -67,21 +68,16 @@ function Traffic() {
       //     }
 
       //   });
-      function success(position) {
-       console.log(position);
-       setx(JSON.stringify(position)) 
-      } 
-      function error() {
-        setx("errr")
-        console.log('Unable to retrieve your location');
-      }
-      navigator.geolocation.getCurrentPosition(success, error);
+
       navigator.geolocation.watchPosition(function (position) {
-        setx(JSON.stringify(position)) 
-        map.current.flyTo({
-          center: [position.coords.longitude, position.coords.latitude]
-        });
-        new mapboxgl.Marker().setLngLat([position.coords.longitude, position.coords.latitude]).addTo(map.current)
+        if (position.coords.accuracy < 20) {
+          map.current.flyTo({
+            center: [position.coords.longitude, position.coords.latitude]
+          });
+          marker.remove();
+          let marker = new mapboxgl.Marker().setLngLat([position.coords.longitude, position.coords.latitude]).addTo(map.current);
+          setuserMarker(marker);
+        }
       });
     }
   });
