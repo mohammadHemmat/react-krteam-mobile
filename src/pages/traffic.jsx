@@ -37,7 +37,7 @@ function Traffic() {
   }, []);
   useEffect(() => {
     if (map.current) return; // initialize map only once
-    
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
@@ -66,7 +66,7 @@ function Traffic() {
           center: [position.coords.longitude, position.coords.latitude]
         });
         new mapboxgl.Marker().setLngLat([position.coords.longitude, position.coords.latitude]).addTo(map.current)
-        
+
       });
     }
 
