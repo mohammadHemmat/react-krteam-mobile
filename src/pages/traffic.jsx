@@ -70,7 +70,7 @@ function Traffic() {
       function success(position) {
        console.log(position);
        setx(JSON.stringify(position)) 
-      }
+      } 
       function error() {
         setx("errr")
         console.log('Unable to retrieve your location');
