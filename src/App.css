@@ -51,7 +51,13 @@ background: #d8dbe0;
   text-align: center;
   justify-items: center;
 }
-
+.progress {
+  background-color: rgb(62, 122, 235);
+  height: 10px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 0.5s;
+}
 .input-text {
   height: 2rem;
   border-radius: 5px;
@@ -104,7 +110,8 @@ background: #d8dbe0;
   padding-top: .6rem;
 }
 .map-container {
-  height: 200px;
+  height: 400px;
+  width:100% ;
   }
 .enter__btn--changes {
 margin-top: .5rem;
