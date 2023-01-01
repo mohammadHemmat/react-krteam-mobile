@@ -6,9 +6,14 @@ function Enter() {
   const [companies, SetCompanies] = useState([]);
   function onClick(e, company_id) {
     console.log(company_id);
-    console.log(companies.filter(p=>p.company._id==company_id));
+    console.log(companies.filter((p) => p.company._id == company_id));
 
-    localStorage.setItem("company",JSON.stringify(companies.filter(p=>p.company._id==company_id)[0].company));
+    localStorage.setItem(
+      "company",
+      JSON.stringify(
+        companies.filter((p) => p.company._id == company_id)[0].company
+      )
+    );
     navigate(`/Traffic`);
   }
   useEffect(() => {
@@ -25,9 +30,9 @@ function Enter() {
       .then((result) => SetCompanies(JSON.parse(result)))
       .catch((error) => console.log("error", error));
   });
- 
+
   return (
-    <div>
+    <div className="enter__background">
       <div className="enter--container">
         <a className="enter__text" href="">
           انتخاب شرکت
