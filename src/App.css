@@ -272,7 +272,7 @@ body {
 .traffic__btn--size {
   width: 100%;
   height: 70px;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .traffic__finger--icon {
@@ -288,9 +288,11 @@ body {
 }
 
 .traffic__footer--container {
-  margin-top: 8rem;
+  position: fixed;
+  margin-top: 1rem;
+  width: 100%;
   background: rgb(0, 0, 131);
-  width: auto;
+  bottom: 0;
 }
 
 .traffic__footer--grid {
