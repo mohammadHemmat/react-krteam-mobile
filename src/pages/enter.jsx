@@ -47,29 +47,31 @@ function Enter() {
         </button>
       </div>
       {companies.map((companyUser) => (
-        <div
-          key={"div" + companyUser.company._id}
-          className="enter__medrik--container"
-        >
-          <img
-            key={"img_" + companyUser.company._id}
-            className="enter__building--icon"
-            src="../images/icon/building-solid.svg"
-            alt=""
-          />
-          <a
-            key={companyUser.company._id}
-            className="enter__medrik--text"
-            onClick={(e) => onClick(e, companyUser.company._id)}
+        <div className="enter__position">
+          <div
+            key={"div" + companyUser.company._id}
+            className="enter__medrik--container"
           >
-            {companyUser.company.name}
-          </a>
-          <img
-            key={"img_2" + companyUser.company._id}
-            className="enter__arrow--icon"
-            src="../images/icon/arrow-left-solid.svg"
-            alt=""
-          />
+            <img
+              key={"img_" + companyUser.company._id}
+              className="enter__building--icon"
+              src="../images/icon/building-solid.svg"
+              alt=""
+            />
+            <a
+              key={companyUser.company._id}
+              className="enter__medrik--text"
+              onClick={(e) => onClick(e, companyUser.company._id)}
+            >
+              {companyUser.company.name}
+            </a>
+            <img
+              key={"img_2" + companyUser.company._id}
+              className="enter__arrow--icon"
+              src="../images/icon/arrow-left-solid.svg"
+              alt=""
+            />
+          </div>
         </div>
       ))}
     </div>

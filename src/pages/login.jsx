@@ -32,7 +32,7 @@ function Login() {
     SetPhoneNumber(e.target.value);
   }
   return (
-    <div>
+    <div className="login__background">
       <header className="header-container">
         <h3 className="header__text">ورود به حساب کاربری</h3>
         <img className="heade-bg3" src="../images/bg3.png" alt="..." />
