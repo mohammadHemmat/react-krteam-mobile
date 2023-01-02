@@ -90,19 +90,22 @@ body {
 }
 
 .btn-inter {
-  display: grid;
-  margin: 0;
   color: #fff;
-  text-decoration: none;
+  padding: 0;
 }
 
 .btn__size {
-  justify-items: center;
+  display: flex;
   height: 2.5rem;
   cursor: pointer;
   background: rgb(0, 0, 189);
   border-radius: 5px;
-  /* margin-bottom: 4.7rem; */
+  justify-content: center;
+}
+
+.login__text--btn {
+  text-decoration: none;
+  color: #fff;
 }
 
 /* enter */

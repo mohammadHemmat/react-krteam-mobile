@@ -52,7 +52,9 @@ function Validation() {
             placeholder="کد ارسال شده را وارد کنید"
           />
           <button className="btn__size btn-inter" type="submit">
-            ورود
+            <a className="login__text--btn" href="">
+              ورود
+            </a>
           </button>
         </form>
       </div>
