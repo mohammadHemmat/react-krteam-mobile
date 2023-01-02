@@ -145,7 +145,7 @@ body {
 .enter__btn {
   display: flex;
   margin-top: 0.5rem;
-  width: 7.5rem;
+  width: 9.5rem;
   grid-column-start: 3;
   justify-self: end;
   margin-left: 1rem;
@@ -165,7 +165,7 @@ body {
   width: 18px;
   justify-content: center;
   align-items: center;
-  padding-right: 0.2rem;
+  margin-right: auto;
   outline: #fff;
   fill: #fff;
 }
@@ -244,6 +244,7 @@ body {
 .traffic__text {
   padding-top: 0.4rem;
   font-weight: 700;
+  width: 18rem;
   font-size: 13px;
   color: #fff;
   padding-right: 1rem;
@@ -257,7 +258,8 @@ body {
 }
 
 .traffic__out--icon {
-  margin-right: 10rem;
+  /* margin-right: auto; */
+  /* margin-left: 1rem; */
   width: 20px;
   fill: #fff;
 }
@@ -266,7 +268,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.26rem;
+  margin-top: 3rem;
   border-radius: 5rem;
 }
 
