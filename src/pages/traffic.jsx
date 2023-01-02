@@ -147,6 +147,10 @@ function Traffic() {
   });
   return (
     <div className="background-container">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      ></meta>
       <div className="traffic-main">
         <div className="traffic-container">
           <p className="trafic__text--header">شرکت {company.name} </p>
