@@ -61,6 +61,7 @@ body {
   transition-delay: 0.5s;
 }
 .input-text {
+  touch-action: none;
   height: 3rem;
   font-size: 13px;
   font-weight: 600;
