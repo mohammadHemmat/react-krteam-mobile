@@ -41,7 +41,8 @@ function Traffic() {
       });
   };
 
-  useEffect(() => {
+  useEffect(() => 
+  {
     if (map.current) return; // initialize map only once
     const access_token = localStorage.getItem("access_token");
     const companyobj = JSON.parse(localStorage.getItem("company"));
